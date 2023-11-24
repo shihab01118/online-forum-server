@@ -1,10 +1,16 @@
 const express = require("express");
 const applyMiddlewares = require("./middlewares/applyMiddleswares");
+const connectDB = require("./db/connectDB");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
 
+const authenticationRoutes = require("./routes/authentication/index")
+
 applyMiddlewares(app);
+
+app.use(authenticationRoutes);
+
 
 app.get("/health", (req, res) => {
   res.send("Assignment is coming...");
@@ -22,6 +28,11 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Assignment is running on port: ${port}`);
-});
+const main = async () => {
+  await connectDB();
+  app.listen(port, () => {
+    console.log(`Assignment is running on port: ${port}`);
+  });
+}
+
+main();
