@@ -5,11 +5,13 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-const authenticationRoutes = require("./routes/authentication/index")
+const authenticationRoutes = require("./routes/authentication")
+const usersRoutes = require("./routes/users")
 
 applyMiddlewares(app);
 
 app.use(authenticationRoutes);
+app.use(usersRoutes);
 
 
 app.get("/health", (req, res) => {
