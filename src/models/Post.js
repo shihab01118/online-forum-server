@@ -6,6 +6,14 @@ const postSchema = new Schema({
   email: String,
   img: String,
   title: String,
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  comments: {
+    type: [String],
+    default: [],   
+  },
   tag: String,
   description: String,
   upVote: Number,
