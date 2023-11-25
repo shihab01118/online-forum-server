@@ -5,14 +5,15 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-const authenticationRoutes = require("./routes/authentication")
-const usersRoutes = require("./routes/users")
+const authenticationRoutes = require("./routes/authentication");
+const usersRoutes = require("./routes/users");
+const postsRoutes = require("./routes/posts");
 
 applyMiddlewares(app);
 
 app.use(authenticationRoutes);
 app.use(usersRoutes);
-
+app.use(postsRoutes);
 
 app.get("/health", (req, res) => {
   res.send("Assignment is coming...");
@@ -35,6 +36,6 @@ const main = async () => {
   app.listen(port, () => {
     console.log(`Assignment is running on port: ${port}`);
   });
-}
+};
 
 main();

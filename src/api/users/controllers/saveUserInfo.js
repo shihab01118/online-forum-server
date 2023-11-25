@@ -4,6 +4,7 @@ const saveUserInfo = async (req, res) => {
   try {
     const userEmail = req.params.email;
     const userData = req.body;
+    console.log(userData);
 
     const query = { email: userEmail };
     const existingUser = await User.findOne(query);

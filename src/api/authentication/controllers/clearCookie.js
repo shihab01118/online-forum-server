@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const clearCookie = async (req, res) => {
   const user = req.body;
-  console.log("logging out --->", user);
+  
   res
     .clearCookie("token", {
       httpOnly: true,
