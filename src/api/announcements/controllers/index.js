@@ -1,3 +1,4 @@
 const saveAnnouncement = require("./saveAnnouncement");
+const getAnnouncements = require("./getAnnouncements");
 
-module.exports = { saveAnnouncement };
+module.exports = { saveAnnouncement, getAnnouncements };
