@@ -8,12 +8,14 @@ const port = process.env.PORT || 5000;
 const authenticationRoutes = require("./routes/authentication");
 const usersRoutes = require("./routes/users");
 const postsRoutes = require("./routes/posts");
+const announcementsRoutes = require("./routes/announcements");
 
 applyMiddlewares(app);
 
 app.use(authenticationRoutes);
 app.use(usersRoutes);
 app.use(postsRoutes);
+app.use(announcementsRoutes);
 
 app.get("/health", (req, res) => {
   res.send("Assignment is coming...");
