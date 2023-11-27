@@ -7,12 +7,14 @@ const {
   getPostById,
 } = require("../../api/posts/controllers");
 const verifyToken = require("../../middlewares/verifyToken");
+const getAllPostCount = require("../../api/posts/controllers/getAllPostCount");
 const router = express.Router();
 
 router.post("/posts", savePost);
-router.get("/posts/count/:email", getPostCount);
+router.get("/posts/count", getAllPostCount);
+router.get("/posts/user/count/:email", getPostCount);
 router.get("/posts/:email", verifyToken, getUserPosts);
 router.get("/posts", getAllPosts);
-router.get("/posts/:id", getPostById);
+router.get("/users/posts/:id", getPostById);
 
 module.exports = router;
