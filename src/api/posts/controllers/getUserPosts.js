@@ -3,7 +3,7 @@ const Post = require("../../../models/Post");
 const getUserPosts = async (req, res) => {
   const { email } = req.params;
   try {
-    const userPosts = await Post.find({ email });
+    const userPosts = await Post.find({ email }).sort({ createdAt: -1 });
     res.status(200).send(userPosts);
   } catch (error) {
     res.status(500).send({ error: error.message });
