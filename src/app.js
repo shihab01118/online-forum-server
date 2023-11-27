@@ -9,6 +9,7 @@ const authenticationRoutes = require("./routes/authentication");
 const usersRoutes = require("./routes/users");
 const postsRoutes = require("./routes/posts");
 const announcementsRoutes = require("./routes/announcements");
+const paymentRoutes = require("./routes/payment");
 
 applyMiddlewares(app);
 
@@ -16,6 +17,7 @@ app.use(authenticationRoutes);
 app.use(usersRoutes);
 app.use(postsRoutes);
 app.use(announcementsRoutes);
+app.use(paymentRoutes);
 
 app.get("/health", (req, res) => {
   res.send("Assignment is coming...");
