@@ -1,3 +1,4 @@
 const postComment = require("./postComment");
+const getCommentsByTitle = require("./getCommentsByTitle");
 
-module.exports = {postComment};
+module.exports = { postComment, getCommentsByTitle };

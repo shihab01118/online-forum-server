@@ -1,7 +1,11 @@
 const express = require("express");
-const { postComment } = require("../../api/comment/controllers");
+const {
+  postComment,
+  getCommentsByTitle,
+} = require("../../api/comment/controllers");
 const router = express.Router();
 
 router.post("/comments", postComment);
+router.get("/comments/:postTitle", getCommentsByTitle);
 
 module.exports = router;
