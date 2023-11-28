@@ -4,6 +4,7 @@ const makeAdmin = require("./makeAdmin");
 const getRole = require("./getRole");
 const getCurrentUser = require("./getCurrentUser");
 const updateUserBadge = require("./updateUserBadge");
+const getAllUsersCount = require("./getAllUsersCount");
 
 module.exports = {
   saveUserInfo,
@@ -12,4 +13,5 @@ module.exports = {
   getRole,
   getCurrentUser,
   updateUserBadge,
+  getAllUsersCount
 };

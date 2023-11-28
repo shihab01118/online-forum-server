@@ -11,6 +11,7 @@ const reportedCommentSchema = new Schema({
     default: Date.now,
     type: String,
   },
+  commentId: String,
 });
 
 const ReportedComment = mongoose.model(
