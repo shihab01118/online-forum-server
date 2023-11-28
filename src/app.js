@@ -12,6 +12,7 @@ const announcementsRoutes = require("./routes/announcements");
 const paymentRoutes = require("./routes/payment");
 const commentsRoutes = require("./routes/comment");
 const reportedCommentsRoutes = require("./routes/ReportedComments");
+const tagsRoutes = require("./routes/tags");
 
 applyMiddlewares(app);
 
@@ -22,6 +23,7 @@ app.use(announcementsRoutes);
 app.use(paymentRoutes);
 app.use(commentsRoutes);
 app.use(reportedCommentsRoutes);
+app.use(tagsRoutes);
 
 app.get("/", (req, res) => {
   res.send("Assignment is coming...");
