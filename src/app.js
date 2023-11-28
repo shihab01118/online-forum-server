@@ -10,6 +10,7 @@ const usersRoutes = require("./routes/users");
 const postsRoutes = require("./routes/posts");
 const announcementsRoutes = require("./routes/announcements");
 const paymentRoutes = require("./routes/payment");
+const commentsRoutes = require("./routes/comment");
 
 applyMiddlewares(app);
 
@@ -18,8 +19,9 @@ app.use(usersRoutes);
 app.use(postsRoutes);
 app.use(announcementsRoutes);
 app.use(paymentRoutes);
+app.use(commentsRoutes);
 
-app.get("/health", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Assignment is coming...");
 });
 
@@ -35,11 +37,13 @@ app.use((err, req, res, next) => {
   });
 });
 
-const main = async () => {
-  await connectDB();
-  app.listen(port, () => {
-    console.log(`Assignment is running on port: ${port}`);
-  });
-};
+// const main = async () => {
+//   await connectDB();
+//   app.listen(port, () => {
+//     console.log(`Assignment is running on port: ${port}`);
+//   });
+// };
 
-main();
+// main();
+
+module.exports = app;
