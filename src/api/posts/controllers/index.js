@@ -3,7 +3,9 @@ const getPostCount = require("./getPostCount");
 const getUserPosts = require("./getUserPosts");
 const getAllPosts = require("./getAllPosts");
 const getPostById = require("./getPostById");
-const getAllPostCount = require("./getAllPostCount")
+const getAllPostCount = require("./getAllPostCount");
+const updateVote = require("./updateVote");
+const getPostByPopularity = require("./getPostByPopularity");
 
 module.exports = {
   savePost,
@@ -11,4 +13,7 @@ module.exports = {
   getUserPosts,
   getAllPosts,
   getPostById,
+  getAllPostCount,
+  updateVote,
+  getPostByPopularity,
 };

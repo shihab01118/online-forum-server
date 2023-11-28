@@ -1,9 +1,9 @@
 const express = require("express");
 const applyMiddlewares = require("./middlewares/applyMiddleswares");
-const connectDB = require("./db/connectDB");
+// const connectDB = require("./db/connectDB");
 require("dotenv").config();
 const app = express();
-const port = process.env.PORT || 5000;
+// const port = process.env.PORT || 5000;
 
 const authenticationRoutes = require("./routes/authentication");
 const usersRoutes = require("./routes/users");
