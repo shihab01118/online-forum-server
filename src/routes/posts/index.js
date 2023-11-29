@@ -7,6 +7,7 @@ const {
   getPostById,
   updateVote,
   getPostByPopularity,
+  deletePostById,
 } = require("../../api/posts/controllers");
 const verifyToken = require("../../middlewares/verifyToken");
 const getAllPostCount = require("../../api/posts/controllers/getAllPostCount");
@@ -20,5 +21,6 @@ router.get("/users/posts/:id", getPostById);
 router.get("/posts/sort/popularity", getPostByPopularity);
 router.post("/posts", savePost);
 router.put("/posts/:postId/like", updateVote);
+router.delete("/posts/:postId", deletePostById);
 
 module.exports = router;

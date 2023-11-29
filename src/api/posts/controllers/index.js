@@ -6,6 +6,7 @@ const getPostById = require("./getPostById");
 const getAllPostCount = require("./getAllPostCount");
 const updateVote = require("./updateVote");
 const getPostByPopularity = require("./getPostByPopularity");
+const deletePostById = require("./deletePostById");
 
 module.exports = {
   savePost,
@@ -16,4 +17,5 @@ module.exports = {
   getAllPostCount,
   updateVote,
   getPostByPopularity,
+  deletePostById,
 };
