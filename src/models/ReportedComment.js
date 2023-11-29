@@ -8,8 +8,8 @@ const reportedCommentSchema = new Schema({
   commentedPost: String,
   feedback: String,
   timeStamp: {
+    type: Date,
     default: Date.now,
-    type: String,
   },
   commentId: String,
 });

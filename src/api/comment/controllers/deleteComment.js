@@ -3,10 +3,15 @@ const ReportedComment = require("../../../models/ReportedComment");
 
 const deleteComment = async (req, res) => {
   try {
-    
-    // await Comment.findOneAndDelete({ _id: commentId });
-    // const result = await ReportedComment.findOneAndDelete({_id: reportedCommentId});
-    res.status(200).send(result);
+    const { commentId, reportedCommentId } = req.query;
+    const commentDeletionResult = await Comment.deleteOne({
+      _id: commentId,
+    });
+    const reportedCommentDeletionResult =
+      await ReportedComment.deleteOne({
+        _id: reportedCommentId,
+      });
+    res.status(200).send(reportedCommentDeletionResult);
   } catch (error) {
     res.status(500).send({ error: error.message });
   }
