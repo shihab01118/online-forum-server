@@ -13,7 +13,7 @@ const verifyAdmin = require("../../middlewares/verifyAdmin");
 const router = express.Router();
 
 router.get("/users/count", getAllUsersCount);
-router.get("/users", verifyToken, verifyAdmin, getUsers);
+router.get("/users", verifyToken, getUsers);
 router.get("/users/:email", verifyToken, getCurrentUser);
 router.get("/users/role/:email", verifyToken, getRole);
 
